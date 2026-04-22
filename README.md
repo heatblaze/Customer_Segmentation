@@ -1,4 +1,4 @@
-# 🧠 Neural Overhaul: Retail Customer Intelligence Platform
+# 🧠 Retail Customer Segmentation: Neural Overhaul
 
 [![Market Status](https://img.shields.io/badge/Status-Production--Ready-success?style=for-the-badge&logo=rocket)](https://github.com/heatblaze/Customer_Segmentation)
 [![Stack](https://img.shields.io/badge/Stack-Next.js%20%7C%20FastAPI%20%7C%20ECharts-blueviolet?style=for-the-badge)](https://github.com/heatblaze/Customer_Segmentation)

@@ -4,7 +4,7 @@ import "./globals.css";
 import ParticleBackground from "@/components/ParticleBackground";
 
 export const metadata: Metadata = {
-  title: "Retail Customer Intelligence",
+  title: "Retail Customer Segmentation",
   description: "Advanced Customer Segmentation & Predictive Analytics",
 };
 
