@@ -1,0 +1,41 @@
+{
+    "profile_id": "RETAILER_MOCK",
+    "retailer_name": "Mock Retailer A",
+    "orders": [
+        {
+            "orderId": "ORD001",
+            "order_date": "01/15/23",
+            "sku": "SKU_A",
+            "quantity": 2,
+            "skuPrice": 10.50
+        },
+        {
+            "orderId": "ORD002",
+            "order_date": "03/10/23",
+            "sku": "SKU_B",
+            "quantity": 1,
+            "skuPrice": 25.00
+        },
+        {
+            "orderId": "ORD003",
+            "order_date": "06/05/23",
+            "sku": "SKU_A",
+            "quantity": 5,
+            "skuPrice": 10.50
+        },
+        {
+            "orderId": "ORD004",
+            "order_date": "06/05/23",
+            "sku": "SKU_C",
+            "quantity": 1,
+            "skuPrice": 45.00
+        },
+        {
+            "orderId": "ORD005",
+            "order_date": "10/20/23",
+            "sku": "SKU_A",
+            "quantity": 3,
+            "skuPrice": 10.50
+        }
+    ]
+}

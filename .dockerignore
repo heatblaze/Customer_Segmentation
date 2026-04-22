@@ -1,0 +1,15 @@
+data/*
+!data/order_data_all.csv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env/
+venv/
+.venv/
+.git/
+.gitignore
+.vscode/
+.idea/
