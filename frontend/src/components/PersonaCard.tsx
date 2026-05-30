@@ -10,7 +10,7 @@ interface PersonaCardProps {
 
 export default function PersonaCard({ persona, index }: PersonaCardProps) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
@@ -25,9 +25,9 @@ export default function PersonaCard({ persona, index }: PersonaCardProps) {
           <span className="segment-label">{persona.label} Segment</span>
         </div>
       </div>
-      
+
       <p className="persona-desc">{persona.description}</p>
-      
+
       <div className="persona-metrics">
         <div className="mini-metric">
           <span className="metric-label">Dominant Trait</span>
@@ -55,6 +55,8 @@ export default function PersonaCard({ persona, index }: PersonaCardProps) {
         }
         .persona-header {
           display: flex;
+          padding-left: 10px;
+          padding-top: 10px;
           align-items: center;
           gap: 20px;
           margin-bottom: 24px;
@@ -62,6 +64,7 @@ export default function PersonaCard({ persona, index }: PersonaCardProps) {
         .persona-desc {
           font-size: 13px;
           color: var(--text-muted);
+          padding-left: 10px;
           line-height: 1.6;
           margin: 0 0 24px 0;
           opacity: 0.8;
@@ -73,6 +76,8 @@ export default function PersonaCard({ persona, index }: PersonaCardProps) {
           grid-template-columns: 1fr 1fr;
           gap: 16px;
           padding-top: 20px;
+          padding-left: 10px;
+          padding-bottom: 10px;
           border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         .persona-icon-ring {

@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Activity, 
-  Users, 
-  DollarSign, 
-  Zap, 
-  Settings, 
+import {
+  Activity,
+  Users,
+  DollarSign,
+  Zap,
+  Settings,
   ChevronRight,
   TrendingUp,
   AlertCircle,
@@ -85,20 +85,20 @@ export default function Dashboard() {
         <div className="nav-section">
           <label>Engine Control</label>
           <div className="algo-toggle">
-            <button 
-              className={algorithm === 'kmeans' ? 'active' : ''} 
+            <button
+              className={algorithm === 'kmeans' ? 'active' : ''}
               onClick={() => setAlgorithm('kmeans')}
             >
               K-Means Standard
             </button>
-            <button 
-              className={algorithm === 'hdbscan' ? 'active' : ''} 
+            <button
+              className={algorithm === 'hdbscan' ? 'active' : ''}
               onClick={() => setAlgorithm('hdbscan')}
             >
               HDBSCAN Advanced
             </button>
-            <button 
-              className={algorithm === 'gmm' ? 'active' : ''} 
+            <button
+              className={algorithm === 'gmm' ? 'active' : ''}
               onClick={() => setAlgorithm('gmm')}
             >
               GMM Probabilistic
@@ -108,11 +108,11 @@ export default function Dashboard() {
 
         <div className="nav-section">
           <label>Segmentation Depth ({clusters})</label>
-          <input 
-            type="range" 
-            min="2" 
-            max="10" 
-            value={clusters} 
+          <input
+            type="range"
+            min="2"
+            max="10"
+            value={clusters}
             onChange={(e) => setClusters(parseInt(e.target.value))}
             className="depth-slider"
           />
@@ -133,11 +133,11 @@ export default function Dashboard() {
             <h1>Retail Customer Segmentation</h1>
             <p>Predictive analytics for <span className="highlight">{algorithm.toUpperCase()}</span> clusters</p>
           </div>
-          <button 
-            className="user-profile glass-card admin-btn" 
+          <button
+            className="user-profile glass-card admin-btn"
             onClick={() => setIsAdminOpen(true)}
           >
-            <Settings size={18} />
+            <Settings size={18} color="#ffffff" />
             <span>System Admin</span>
             <div className="btn-glow" />
           </button>
@@ -153,29 +153,29 @@ export default function Dashboard() {
         <div className="dashboard-grid">
           {/* KPI Row */}
           <div className="kpi-row grid-span-12">
-            <KPICard 
-              label="Total Retailers" 
-              value={data?.stats?.total_retailers?.toLocaleString() || '——'} 
-              icon={<Users />} 
-              color="indigo" 
+            <KPICard
+              label="Total Retailers"
+              value={data?.stats?.total_retailers?.toLocaleString() || '——'}
+              icon={<Users />}
+              color="indigo"
             />
-            <KPICard 
-              label="Revenue Pool" 
-              value={data?.stats?.total_revenue ? `\u20b9${(data.stats.total_revenue / 1e7).toFixed(1)}Cr` : '——'} 
-              icon={<DollarSign />} 
-              color="cyan" 
+            <KPICard
+              label="Revenue Pool"
+              value={data?.stats?.total_revenue ? `\u20b9${(data.stats.total_revenue / 1e7).toFixed(1)}Cr` : '——'}
+              icon={<DollarSign />}
+              color="cyan"
             />
-            <KPICard 
-              label="Average Order Value" 
-              value={data?.stats?.avg_monetary ? `\u20b9${Math.round(data.stats.avg_monetary).toLocaleString()}` : '——'} 
-              icon={<TrendingUp />} 
-              color="rose" 
+            <KPICard
+              label="Average Order Value"
+              value={data?.stats?.avg_monetary ? `\u20b9${Math.round(data.stats.avg_monetary).toLocaleString()}` : '——'}
+              icon={<TrendingUp />}
+              color="rose"
             />
-            <KPICard 
-              label="Segment Count" 
-              value={data?.stats?.segments_found || '——'} 
-              icon={<BarChart3 />} 
-              color="amber" 
+            <KPICard
+              label="Segment Count"
+              value={data?.stats?.segments_found || '——'}
+              icon={<BarChart3 />}
+              color="amber"
             />
           </div>
 
@@ -248,9 +248,9 @@ export default function Dashboard() {
               <Users size={18} />
               <h3>Retailer Leaderboard</h3>
             </div>
-            <Leaderboard 
-              data={data?.leaderboard || []} 
-              onRetailerClick={(r) => { setSelectedRetailer(r); setIsProfileOpen(true); }} 
+            <Leaderboard
+              data={data?.leaderboard || []}
+              onRetailerClick={(r) => { setSelectedRetailer(r); setIsProfileOpen(true); }}
             />
           </div>
 
@@ -265,23 +265,23 @@ export default function Dashboard() {
       </div>
 
       {/* Retailer Detail Modal */}
-      <RetailerProfileModal 
-        isOpen={isProfileOpen} 
-        onClose={() => setIsProfileOpen(false)} 
-        retailer={selectedRetailer} 
+      <RetailerProfileModal
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+        retailer={selectedRetailer}
       />
 
       {/* System Admin Modal */}
       <AnimatePresence>
         {isAdminOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="modal-overlay"
             onClick={() => setIsAdminOpen(false)}
           >
-            <motion.div 
+            <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -341,18 +341,18 @@ export default function Dashboard() {
                 <div className="drawer-section">
                   <label>Engine Parameters</label>
                   <div className="param-grid">
-                     <div className="param-node">
-                        <span className="p-key">Cluster Depth</span>
-                        <span className="p-val">{clusters}</span>
-                     </div>
-                     <div className="param-node">
-                        <span className="p-key">Min Sample Size</span>
-                        <span className="p-val">15</span>
-                     </div>
-                     <div className="param-node">
-                        <span className="p-key">Feature Set</span>
-                        <span className="p-val">Premium (Neural)</span>
-                     </div>
+                    <div className="param-node">
+                      <span className="p-key">Cluster Depth</span>
+                      <span className="p-val">{clusters}</span>
+                    </div>
+                    <div className="param-node">
+                      <span className="p-key">Min Sample Size</span>
+                      <span className="p-val">15</span>
+                    </div>
+                    <div className="param-node">
+                      <span className="p-key">Feature Set</span>
+                      <span className="p-val">Premium (Neural)</span>
+                    </div>
                   </div>
                 </div>
               </div>
