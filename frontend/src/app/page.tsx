@@ -56,7 +56,9 @@ export default function Dashboard() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get(`http://localhost:8000/segments?algorithm=${algorithm}&n_clusters=${clusters}`);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+      const res = await axios.get(`${apiUrl}/segments?algorithm=${algorithm}&n_clusters=${clusters}`);
+
       if (res.data.status === 'success') {
         setData(res.data);
       } else {
